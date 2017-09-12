@@ -17,7 +17,6 @@
 		24EA8E95C1E233C3C442E463F41DCF0D /* M80AttributedLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69917179A0BAC13DBAA65A3175F438C6 /* M80AttributedLabel-dummy.m */; };
 		24EBB3C31D8BA2B762F33EAE4CF4C938 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C027C738093EDCDB84BA76527F2FC8D2 /* CoreText.framework */; };
 		24EEA910B3DD6E5C2FD9CED5EA5E9FDF /* NSMutableAttributedString+M80.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEC42798EE2AD8FF74143299A07A45 /* NSMutableAttributedString+M80.m */; };
-		32E367A7AC6A9C38EA153F6F8514FCCE /* M80AttributedLabelURL.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5FADB2450F95546BF16EEDE75227FE /* M80AttributedLabelURL.m */; };
 		C2C571C4FC29A805AC1B9064CCBEFAB6 /* NSMutableAttributedString+M80.h in Headers */ = {isa = PBXBuildFile; fileRef = 78EE3D312DF08869760F915B9034746B /* NSMutableAttributedString+M80.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91745DCCF36FA14326EE143E7B8F1ED /* M80AttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B36CCD5BD544A1B8CBCE459DB943B214 /* M80AttributedLabel.m */; };
 		CEF5500FBF92C837725B133F997316C5 /* M80AttributedLabelURL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6065B7ADF8E952E8A1109D763BE18524 /* M80AttributedLabelURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,18 +39,18 @@
 		36EAC7EA448B1DA814CD7F124D4E22AB /* M80AttributedLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M80AttributedLabel-prefix.pch"; sourceTree = "<group>"; };
 		583C90C19593DC298DFFCD56EA6BE927 /* Pods-OCDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OCDemo-resources.sh"; sourceTree = "<group>"; };
 		6065B7ADF8E952E8A1109D763BE18524 /* M80AttributedLabelURL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = M80AttributedLabelURL.h; sourceTree = "<group>"; };
-		658547F92C1D1F0530C87F03ACCFD78F /* libPods-OCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-OCDemo.a"; path = "libPods-OCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		658547F92C1D1F0530C87F03ACCFD78F /* libPods-OCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D3FC8C693AEFAFA335130745747065 /* M80AttributedLabelDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = M80AttributedLabelDefines.h; sourceTree = "<group>"; };
 		69917179A0BAC13DBAA65A3175F438C6 /* M80AttributedLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M80AttributedLabel-dummy.m"; sourceTree = "<group>"; };
 		78EE3D312DF08869760F915B9034746B /* NSMutableAttributedString+M80.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+M80.h"; sourceTree = "<group>"; };
 		8BDA6D83405B195C5F2549C3BBBBB211 /* M80AttributedLabelAttachment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = M80AttributedLabelAttachment.h; sourceTree = "<group>"; };
 		9144123295245A5113A7DE51E42B84DE /* M80AttributedLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M80AttributedLabel.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D5B36FA079BD7876286681E741CD47F /* Pods-OCDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OCDemo-dummy.m"; sourceTree = "<group>"; };
 		A264AE3539A64A8705F674524D995EBB /* M80AttributedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = M80AttributedLabel.h; sourceTree = "<group>"; };
 		AAADC15A68071FDF167C652C20202045 /* Pods-OCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AD8BCB10BE426C38B9AAB64964C5226A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		AEC07F5D185CA585A2736F3E8E1C669C /* libM80AttributedLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libM80AttributedLabel.a; path = libM80AttributedLabel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEC07F5D185CA585A2736F3E8E1C669C /* libM80AttributedLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libM80AttributedLabel.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36CCD5BD544A1B8CBCE459DB943B214 /* M80AttributedLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = M80AttributedLabel.m; sourceTree = "<group>"; };
 		B4FE4CFDE984542D1688E8E89B4B989F /* M80AttributedLabelAttachment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = M80AttributedLabelAttachment.m; sourceTree = "<group>"; };
 		C027C738093EDCDB84BA76527F2FC8D2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,7 +60,6 @@
 		DACEC42798EE2AD8FF74143299A07A45 /* NSMutableAttributedString+M80.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+M80.m"; sourceTree = "<group>"; };
 		EAEA4C22389E9009213CB09ED7DAD9FE /* Pods-OCDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OCDemo-frameworks.sh"; sourceTree = "<group>"; };
 		EF9535FD8A9CCE32DEEEB08E9DEB7469 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FD5FADB2450F95546BF16EEDE75227FE /* M80AttributedLabelURL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = M80AttributedLabelURL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +129,9 @@
 				B4FE4CFDE984542D1688E8E89B4B989F /* M80AttributedLabelAttachment.m */,
 				66D3FC8C693AEFAFA335130745747065 /* M80AttributedLabelDefines.h */,
 				6065B7ADF8E952E8A1109D763BE18524 /* M80AttributedLabelURL.h */,
-				FD5FADB2450F95546BF16EEDE75227FE /* M80AttributedLabelURL.m */,
 				78EE3D312DF08869760F915B9034746B /* NSMutableAttributedString+M80.h */,
 				DACEC42798EE2AD8FF74143299A07A45 /* NSMutableAttributedString+M80.m */,
 			);
-			name = M80AttributedLabel;
 			path = M80AttributedLabel;
 			sourceTree = "<group>";
 		};
@@ -290,7 +286,6 @@
 				24EA8E95C1E233C3C442E463F41DCF0D /* M80AttributedLabel-dummy.m in Sources */,
 				C91745DCCF36FA14326EE143E7B8F1ED /* M80AttributedLabel.m in Sources */,
 				01BB71951E12FC7CB4B441B9C5483F0E /* M80AttributedLabelAttachment.m in Sources */,
-				32E367A7AC6A9C38EA153F6F8514FCCE /* M80AttributedLabelURL.m in Sources */,
 				24EEA910B3DD6E5C2FD9CED5EA5E9FDF /* NSMutableAttributedString+M80.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

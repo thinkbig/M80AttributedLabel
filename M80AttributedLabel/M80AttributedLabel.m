@@ -86,7 +86,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     _autoDetectLinks        = YES;
     _lineSpacing            = 0.0;
     _paragraphSpacing       = 0.0;
-
+    
     if (self.backgroundColor == nil)
     {
         self.backgroundColor = [UIColor whiteColor];
@@ -245,7 +245,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     }
     else
     {
-        return [[NSAttributedString alloc] init];
+        return [[NSAttributedString alloc]init];
     }
 }
 
@@ -266,7 +266,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
         CTLineBreakMode lineBreakMode = self.lineBreakMode;
         if (self.lineBreakMode == kCTLineBreakByTruncatingTail)
         {
-            lineBreakMode = _numberOfLines == 1 ? kCTLineBreakByTruncatingTail : kCTLineBreakByWordWrapping;
+            lineBreakMode = _numberOfLines == 1 ? kCTLineBreakByCharWrapping : kCTLineBreakByWordWrapping;
         }
         CGFloat fontLineHeight = self.font.lineHeight;  //使用全局fontHeight作为最小lineHeight
         
@@ -285,7 +285,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
                            value:(__bridge id)paragraphStyle
                            range:NSMakeRange(0, [drawString length])];
         CFRelease(paragraphStyle);
-
+        
         
         
         for (M80AttributedLabelURL *url in _linkLocations)
@@ -297,8 +297,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
             UIColor *drawLinkColor = url.color ? : self.linkColor;
             [drawString m80_setTextColor:drawLinkColor range:url.range];
             [drawString m80_setUnderlineStyle:_underLineForLink ? kCTUnderlineStyleSingle : kCTUnderlineStyleNone
-                                 modifier:kCTUnderlinePatternSolid
-                                    range:url.range];
+                                     modifier:kCTUnderlinePatternSolid
+                                        range:url.range];
         }
         return drawString;
     }
@@ -535,8 +535,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
 {
     M80AttributedLabelAttachment *attachment = [M80AttributedLabelAttachment attachmentWith:image
                                                                                      margin:margin
-                                                                             alignment:alignment
-                                                                               maxSize:maxSize];
+                                                                                  alignment:alignment
+                                                                                    maxSize:maxSize];
     [self appendAttachment:attachment];
 }
 
@@ -627,8 +627,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     
     //hack:
     //1.需要加上额外的一部分size,有些情况下计算出来的像素点并不是那么精准
-    //2.iOS7 的 CTFramesetterSuggestFrameSizeWithConstraint s方法比较残,需要多加一部分 height
-    //3.iOS7 多行中如果首行带有很多空格，会导致返回的 suggestionWidth 远小于真实 width ,那么多行情况下就是用传入的 width
+    //2.ios7的CTFramesetterSuggestFrameSizeWithConstraints方法比较残,需要多加一部分height
+    //3.ios7多行中如果首行带有很多空格，会导致返回的suggestionWidth远小于真是width,那么多行情况下就是用传入的width
     if (newSize.height < _fontHeight * 2)   //单行
     {
         return CGSizeMake(ceilf(newSize.width) + 2.0, ceilf(newSize.height) + 4.0);
@@ -665,7 +665,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     {
         [self prepareTextFrame:drawString rect:rect];
         [self drawHighlightWithRect:rect];
-        [self drawAttachments];
+        [self drawAttachments:rect];
         [self drawShadow:ctx];
         [self drawText:drawString
                   rect:rect
@@ -797,7 +797,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
                             [truncationString deleteCharactersInRange:NSMakeRange(lastLineRange.length - 1, 1)];
                         }
                         [truncationString appendAttributedString:tokenString];
-
+                        
                         
                         CTLineRef truncationLine = CTLineCreateWithAttributedString((CFAttributedStringRef)truncationString);
                         CTLineRef truncatedLine = CTLineCreateTruncatedLine(truncationLine, rect.size.width, truncationType, truncationToken);
@@ -829,7 +829,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
 }
 
 
-- (void)drawAttachments
+- (void)drawAttachments:(CGRect)rect
 {
     if ([_attachments count] == 0)
     {
@@ -895,7 +895,9 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
                     break;
             }
             
-            CGRect rect = CGRectMake(lineOrigin.x + xOffset, imageBoxOriginY, width, imageBoxHeight);
+            CGFloat offX = rect.origin.x;
+            CGFloat offY = rect.origin.y;
+            CGRect rect = CGRectMake(lineOrigin.x + xOffset + offX, imageBoxOriginY + offY, width, imageBoxHeight);
             UIEdgeInsets flippedMargins = attributedImage.margin;
             CGFloat top = flippedMargins.top;
             flippedMargins.top = flippedMargins.bottom;
@@ -905,7 +907,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
             
             if (i == numberOfLines - 1 &&
                 k >= runCount - 2 &&
-                 _lineBreakMode == kCTLineBreakByTruncatingTail)
+                _lineBreakMode == kCTLineBreakByTruncatingTail)
             {
                 //最后行最后的2个CTRun需要做额外判断
                 CGFloat attachmentWidth = CGRectGetWidth(attatchmentRect);
@@ -1025,8 +1027,8 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     }
     else
     {
-        dispatch_async(get_m80_attributed_label_parse_queue(), ^{
-        
+        dispatch_sync(get_m80_attributed_label_parse_queue(), ^{
+            
             NSArray *links = [M80AttributedLabelURL detectLinks:text];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -1067,7 +1069,7 @@ static dispatch_queue_t get_m80_attributed_label_parse_queue() \
     
     if (self.touchedLink)
     {
-          [self setNeedsDisplay];
+        [self setNeedsDisplay];
     }
     else
     {
